@@ -1,0 +1,16 @@
+@import 'select2/dist/css/select2.css';
+
+
+/* 1. Importez Bootstrap CSS */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/* 2. Importez Font Awesome pour les icônes */
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
+/* 3. (Optionnel) Si votre projet utilise Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
