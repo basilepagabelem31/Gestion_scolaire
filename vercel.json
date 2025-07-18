@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "functions": {
+    "api/index.php": {
+      "runtime": "vercel-php@0.7.3"
+      // Utilise le runtime PHP spécifique. Vérifiez la dernière version stable sur le dépôt de "vercel-php" si besoin.
+      // Pour PHP 8.3, par exemple, vous pourriez utiliser "vercel-php@0.7.3"
+    }
+  },
+  "routes": [
+    // Cette règle sert les assets compilés par Vite depuis public/build/assets
+    {
+      "src": "/assets/(.*)",
+      "dest": "/public/build/assets/$1"
+    },
+    // Cette règle redirige toutes les autres requêtes vers notre fonction PHP serverless
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.php"
+    }
+  ],
+  "outputDirectory": "public",
+  "framework": null,
+  "installCommand": "composer install --no-dev --optimize-autoloader && npm install",
+  "buildCommand": "npm run build"
+}
